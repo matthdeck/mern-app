@@ -70,7 +70,7 @@ function Login() {
           <div className="form-group">
             <input 
               type='email' 
-              classname='form-control' 
+              className='form-control' 
               id='email' 
               name='email' 
               value={email} 
@@ -81,7 +81,7 @@ function Login() {
           <div className="form-group">
             <input 
               type='password' 
-              classname='form-control' 
+              className='form-control' 
               id='password' 
               name='password' 
               value={password} 
