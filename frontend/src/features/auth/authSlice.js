@@ -54,7 +54,7 @@ async () => {
   await authService.logout()
 })
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
@@ -63,7 +63,7 @@ const authSlice = createSlice({
       state.isSuccess = false
       state.isError = false
       state.message = ''
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -101,5 +101,5 @@ const authSlice = createSlice({
   },
 })
 
-export const {reset} = authSlice.actions
+export const { reset } = authSlice.actions
 export default authSlice.reducer
