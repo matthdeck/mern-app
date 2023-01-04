@@ -26,7 +26,8 @@ function Dashboard() {
       navigate('/login')
     }
 
-    dispatch(getGoals()) // FIX
+    // dispatch(getGoals()) // FIX
+    
 
     return () => {
       dispatch(reset())
@@ -45,6 +46,10 @@ function Dashboard() {
       </section>
 
       <GoalForm />
+
+      <section className='content'>
+        
+      </section>
     </>
   ) 
 }
