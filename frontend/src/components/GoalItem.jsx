@@ -41,7 +41,12 @@ function GoalItem({ goal }) {
         </form>) : (
         <>
           <h2>{goal.text}</h2>
-          <AiFillEdit onClick={() => handleEdit(true)} className='edit' />
+          <AiFillEdit 
+            onClick={() => {
+            handleEdit(true)
+            setText(goal.text)
+            }} 
+            className='edit' />
         </>
         )
       }
