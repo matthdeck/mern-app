@@ -28,6 +28,26 @@ export const createGoal = createAsyncThunk(
   }
 )
 
+// Update goal
+export const updateGoal = createAsyncThunk(
+  'goals/update', 
+  async (goalData, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await goalService.updateGoal(goalData.text, goalData.id, token)
+    } catch (err) {
+      console.log(err)
+      const message = 
+        (err.response && 
+          err.response.data && 
+          err.response.data.message) || 
+        err.message || 
+        err.toString()
+      return thunkAPI.rejectWithValue(message)
+    }
+  }
+)
+
 // Get user goals
 export const getGoals = createAsyncThunk(
   'goals/getAll',
@@ -83,6 +103,22 @@ export const goalSlice = createSlice({
         state.goals.push(action.payload)
       })
       .addCase(createGoal.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
+      .addCase(updateGoal.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(updateGoal.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.goals.forEach(goal => {
+          if (goal._id === action.payload._id)
+            goal.text = action.payload.text
+        })
+      })
+      .addCase(updateGoal.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
