@@ -25,7 +25,7 @@ function GoalItem({ goal }) {
         <form className='edit' onSubmit={onSubmit}>
           <label>
             
-            <textarea 
+            <input 
               type='text' 
               defaultValue={goal.text}
               onChange={(e) => setText(e.target.value)} 
