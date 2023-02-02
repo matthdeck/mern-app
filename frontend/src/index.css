@@ -93,6 +93,10 @@ h3 {
 }
 
 .goal {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   background-color: #f4f4f4;
   margin: 10px 0;
   padding: 20px 0 10px;
@@ -106,6 +110,30 @@ h3 {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+.edit {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit input,
+.edit button {
+  cursor: pointer;
+}
+
+.edit-btn {
+  cursor: pointer;
+}
+
+.edit-close {
+  margin-top: 10px;
+}
+
+.edit-btn:hover {
+  transform: scale(0.90);
 }
 
 .form,

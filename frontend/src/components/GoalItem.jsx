@@ -22,9 +22,9 @@ function GoalItem({ goal }) {
     <div className='goal'>
       <div>{new Date(goal.createdAt).toLocaleString('en-US')}</div>
       {edit ? (
-        <form onSubmit={onSubmit}>
+        <form className='edit' onSubmit={onSubmit}>
           <label>
-            Edit Goal:
+            
             <textarea 
               type='text' 
               defaultValue={goal.text}
@@ -32,11 +32,12 @@ function GoalItem({ goal }) {
             />
           </label>
           <input 
+            className='btn'
             type='submit' 
             value='update goal' 
           />
-          <button type='button' onClick={() => handleEdit(false)}>
-            X
+          <button className='edit-close' type='button' onClick={() => handleEdit(false)}>
+            close
           </button>
         </form>) : (
         <>
@@ -46,7 +47,8 @@ function GoalItem({ goal }) {
             handleEdit(true)
             setText(goal.text)
             }} 
-            className='edit' />
+            className='edit-btn'
+          />
         </>
         )
       }
