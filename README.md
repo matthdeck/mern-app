@@ -1,6 +1,6 @@
 # Goal Setting App
 
-This goal setting app is designed to help users stay motivated by keeping track of goals.  
+This goal setting app is designed to help users stay motivated by keeping track of goals
 
 ## Features 
 
