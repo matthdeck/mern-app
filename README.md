@@ -8,5 +8,6 @@ This goal setting app is designed to help users stay motivated by keeping track 
 
 ## Getting Started
 
-- Deployed sight: [Goal Setting App](https://merngoalappmhd.herokuapp.com)
+- Clone or download this repository
 - Launch in local developement server by executing `npm run dev`
+- Deployed sight: [Goal Setting App](https://merngoalappmhd.herokuapp.com)
