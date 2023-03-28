@@ -2,9 +2,12 @@
 
 This goal setting app is designed to help users stay motivated by keeping track of goals.  
 
-## Features
+## Features 
 
-- create, read, update and delete goals
+- Create goals 
+- Update goals 
+- Delete goals 
+- JWT authentication for user login 
 
 ## Getting Started
 
